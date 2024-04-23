@@ -67,6 +67,16 @@ static int update(UPDATE_FUNC_ARGS)
                         if (parts[i].tmp>0)
                             {
                              parts[i].tmp-=2;
+							 if (parts[i].tmp>2)
+							 {
+								if(sim->rng.chance(1,100))
+									{
+									sim->kill_part(ID(r)); // "absorbs" the wax as to allude to the copper being polished believe you can also protect against corrosion with enough wax
+									
+									}
+							 }
+							 
+							 
                             }
                         
                        
@@ -79,7 +89,7 @@ static int update(UPDATE_FUNC_ARGS)
    
  if (parts[i].temp>(R_TEMP+500.0f))
     {
-        parts[i].temp = restrict_flt(parts[i].temp-0.01f, MIN_TEMP, MAX_TEMP);
+        parts[i].temp = restrict_flt(parts[i].temp-0.01f, MIN_TEMP, MAX_TEMP); // passively reduces temperature value over time until temp is below room temp + 500f 
     }
 
     for (auto rx = -4; rx <= 4; rx++)
@@ -95,21 +105,28 @@ static int update(UPDATE_FUNC_ARGS)
                     {
                         if (sim->rng.chance(1, 100))
                             {
-                        
-                                parts[i].tmp+=1;
+								if (parts[i].tmp<100)
+								{
+									parts[i].tmp+=1;
+								}
+								
+                                
                             }    
                     }
 
                 else
 
-				for (int reactType:reactTypes)
+				for (int reactType:reactTypes) // Vector component for the various types of things it reacts to, see above
                 {
                     if(TYP(r)==reactType)
                     {                
                         if (sim->rng.chance(1, 1000))
                             {
                         
-                                parts[i].tmp+=1;
+                              if (parts[i].tmp<100)
+								{
+									parts[i].tmp+=1;
+								}
                             }
                     }
                 }   
@@ -121,9 +138,9 @@ static int update(UPDATE_FUNC_ARGS)
 }
 static int graphics(GRAPHICS_FUNC_ARGS) //target colour of green hue 28 r 115 g 85 b
 {
-	*colr -= cpart->tmp;
-	*colg += cpart->tmp;
-	*colb += cpart->tmp;
+	*colr -= cpart->tmp*2;
+	*colg += cpart->tmp*2;
+	*colb += cpart->tmp*2;
 	if (*colr<=28)
 		*colr = 28;
 	if (*colg>=115)
@@ -131,4 +148,5 @@ static int graphics(GRAPHICS_FUNC_ARGS) //target colour of green hue 28 r 115 g 
 	if (*colb>=85)
 		*colb = 85;
 	return 0;
+
 }
