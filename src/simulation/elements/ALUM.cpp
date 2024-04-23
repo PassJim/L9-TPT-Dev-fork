@@ -52,7 +52,6 @@ static int update(UPDATE_FUNC_ARGS)
         parts[i].temp = restrict_flt(parts[i].temp-0.005f, MIN_TEMP, MAX_TEMP);
     }
     else
-    return 0;
     
     for (auto rx = -2; rx <= 2; rx++)
         {

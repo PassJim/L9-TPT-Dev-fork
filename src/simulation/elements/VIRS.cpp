@@ -98,7 +98,7 @@ int Element_VIRS_update(UPDATE_FUNC_ARGS)
 					return 0;
 				}
 				//soap cures virus
-				else if (TYP(r) == PT_SOAP)
+				else if (TYP(r) == PT_SOAP || TYP(r)==PT_COPR)
 				{
 					parts[i].tmp3 += 10;
 					if (!(rndstore & 0x3))
