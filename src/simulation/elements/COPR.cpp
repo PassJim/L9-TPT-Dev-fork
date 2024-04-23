@@ -53,6 +53,30 @@ void Element::Element_COPR()
 
 static int update(UPDATE_FUNC_ARGS)
 {
+ for (auto rx = -4; rx <= 4; rx++)
+        {
+            for (auto ry = -4; ry <= 4; ry++)
+            {
+                if (rx || ry)
+                {
+                    auto r = pmap[y+ry][x+rx];
+                    if (!r)
+                        continue;
+                    if (TYP(r)==PT_MWAX && sim->rng.chance(1, 300))
+                    {   
+                        if (parts[i].tmp>0)
+                            {
+                             parts[i].tmp-=2;
+                            }
+                        
+                       
+        
+                    }
+                }
+            }
+        }
+
+   
  if (parts[i].temp>(R_TEMP+500.0f))
     {
         parts[i].temp = restrict_flt(parts[i].temp-0.01f, MIN_TEMP, MAX_TEMP);
