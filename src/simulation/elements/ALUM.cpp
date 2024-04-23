@@ -49,7 +49,7 @@ static int update(UPDATE_FUNC_ARGS)
 {
     if (parts[i].temp>(R_TEMP+273.15f))
     {
-        parts[i].temp = restrict_flt(parts[i].temp-0.40f, MIN_TEMP, MAX_TEMP);
+        parts[i].temp = restrict_flt(parts[i].temp-0.005f, MIN_TEMP, MAX_TEMP);
     }
     else
     return 0;

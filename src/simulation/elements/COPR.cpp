@@ -53,9 +53,9 @@ void Element::Element_COPR()
 
 static int update(UPDATE_FUNC_ARGS)
 {
- if (parts[i].temp>(R_TEMP+273.15f))
+ if (parts[i].temp>(R_TEMP+500.0f))
     {
-        parts[i].temp = restrict_flt(parts[i].temp-0.80f, MIN_TEMP, MAX_TEMP);
+        parts[i].temp = restrict_flt(parts[i].temp-0.01f, MIN_TEMP, MAX_TEMP);
     }
 
     for (auto rx = -4; rx <= 4; rx++)
