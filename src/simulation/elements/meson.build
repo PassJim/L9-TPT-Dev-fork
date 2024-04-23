@@ -199,8 +199,9 @@ simulation_elem_names = [
 	'HLOY',
 	'HSTR',
 	'HREP',
+	'HNAN',
 	'HUMN',
-	'SBOM',
+	'SBOMB',
 	'YFUL'
 ]
 
