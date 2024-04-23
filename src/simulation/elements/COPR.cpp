@@ -6,7 +6,7 @@ void Element::Element_COPR()
 {
 	Identifier = "DEFAULT_PT_COPR";
 	Name = "COPR";
-	Colour = 0x505070_rgb;
+	Colour = 0xAF6A49_rgb;
 	MenuVisible = 1;
 	MenuSection = SC_SOLIDS;
 	Enabled = 1;
@@ -46,6 +46,6 @@ void Element::Element_COPR()
 }
 
 //static int update(UPDATE_FUNC_ARGS)
-{
+//{
 
-}
+//}
