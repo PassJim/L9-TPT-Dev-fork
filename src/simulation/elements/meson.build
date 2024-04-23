@@ -193,7 +193,9 @@ simulation_elem_names = [
 	'LITH',
 	'RSST',
 	'RSSS',
-	'COPR'
+	'COPR',
+	'ALUM',
+	'ALUP'
 ]
 
 simulation_elem_src = []

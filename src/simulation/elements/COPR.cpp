@@ -1,6 +1,10 @@
 #include "simulation/ElementCommon.h"
+#include <vector>
 
-//static int update(UPDATE_FUNC_ARGS);
+static int update(UPDATE_FUNC_ARGS);
+static int graphics(GRAPHICS_FUNC_ARGS);
+
+std::vector<int> reactTypes = {PT_WATR,PT_DSTW,}; // corrodes element below
 
 void Element::Element_COPR()
 {
@@ -29,7 +33,7 @@ void Element::Element_COPR()
 	Weight = 100;
 
 	HeatConduct = 251;
-	Description = "Breakable metal. Common conductive building material, can melt and break under pressure.";
+	Description = "Copper, patinas if wet, Highly conductive, dissipates heat over time";
 
 	Properties = TYPE_SOLID|PROP_CONDUCTS|PROP_LIFE_DEC|PROP_HOT_GLOW;
 
@@ -39,13 +43,68 @@ void Element::Element_COPR()
 	HighPressureTransition = ST;
 	LowTemperature = ITL;
 	LowTemperatureTransition = NT;
-	HighTemperature = 1273.0f;
+	HighTemperature = 1983.0f;
 	HighTemperatureTransition = PT_LAVA;
 
-	//Update = &update;
+	Update = &update;
+    Graphics = &graphics;
+
 }
 
-//static int update(UPDATE_FUNC_ARGS)
-//{
+static int update(UPDATE_FUNC_ARGS)
+{
+ if (parts[i].temp>(R_TEMP+273.15f))
+    {
+        parts[i].temp = restrict_flt(parts[i].temp-0.80f, MIN_TEMP, MAX_TEMP);
+    }
 
-//}
+    for (auto rx = -4; rx <= 4; rx++)
+	{
+		for (auto ry = -4; ry <= 4; ry++)
+		{
+			if (rx || ry)
+			{
+				auto r = pmap[y+ry][x+rx];
+				if (!r)
+					continue;
+                if(TYP(r)==PT_SLTW)
+                    {
+                        if (sim->rng.chance(1, 100))
+                            {
+                        
+                                parts[i].tmp+=1;
+                            }    
+                    }
+
+                else
+
+				for (int reactType:reactTypes)
+                {
+                    if(TYP(r)==reactType)
+                    {                
+                        if (sim->rng.chance(1, 1000))
+                            {
+                        
+                                parts[i].tmp+=1;
+                            }
+                    }
+                }   
+			}
+		}
+			
+	}
+	return 0;
+}
+static int graphics(GRAPHICS_FUNC_ARGS) //target colour of green hue 28 r 115 g 85 b
+{
+	*colr -= cpart->tmp;
+	*colg += cpart->tmp;
+	*colb += cpart->tmp;
+	if (*colr<=28)
+		*colr = 28;
+	if (*colg>=115)
+		*colg = 115;
+	if (*colb>=85)
+		*colb = 85;
+	return 0;
+}
