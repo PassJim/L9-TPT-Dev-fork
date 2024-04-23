@@ -202,7 +202,8 @@ simulation_elem_names = [
 	'HNAN',
 	'HUMN',
 	'SBOMB',
-	'YFUL'
+	'YFUL',
+	'ROYL'
 ]
 
 simulation_elem_src = []

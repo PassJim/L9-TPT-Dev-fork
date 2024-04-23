@@ -61,7 +61,7 @@ static int update(UPDATE_FUNC_ARGS)
 				switch (TYP(r))
 				{
 				case PT_YFUL:
-					if (sim->rng.chance(1, 50))
+					if (sim->rng.chance(1, 500))
 					{
 						auto np = sim->create_part(ID(r),x+rx,y+ry,PT_HUMN);
 						if (np<0) continue;
@@ -87,14 +87,6 @@ static int update(UPDATE_FUNC_ARGS)
 						parts[i].life = 4;
 					}
 					break;
-				case PT_SMKE:
-				case PT_CO2:
-					if (sim->rng.chance(1, 50))
-					{
-						sim->kill_part(ID(r));
-						parts[i].life = sim->rng.between(60, 119);
-					}
-					break;
 				
 				default:
 					continue;
@@ -102,25 +94,7 @@ static int update(UPDATE_FUNC_ARGS)
 			}
 		}
 	}
-	if (parts[i].life==2)
-	{
-		for (auto rx = -1; rx <= 1; rx++)
-		{
-			for (auto ry = -1; ry <= 1; ry++)
-			{
-				if (rx || ry)
-				{
-					auto r = pmap[y+ry][x+rx];
-					if (!r)
-						sim->create_part(-1,x+rx,y+ry,PT_O2);
-				}
-			}
-		}
-		parts[i].life = 0;
-	}
-	if (parts[i].temp > 350 && parts[i].temp > parts[i].tmp2)
-		parts[i].tmp2 = (int)parts[i].temp;
-	return 0;
+	
 succ:
 	sim->create_part(i,x,y,PT_PLNT);
 	return 0;
