@@ -62,30 +62,28 @@ static int update(UPDATE_FUNC_ARGS)
 				{
 				case PT_YFUL:
 					if (sim->rng.chance(1, 500))
-					{
+					{	
 						auto np = sim->create_part(ID(r),x+rx,y+ry,PT_HUMN);
 						if (np<0) continue;
 						parts[np].life = 0;
 					}
+
 					break;
+					
+					
 				case PT_EXOT:
 					if (sim->rng.chance(1, 1000))
-					{
+					
 						goto succ;	
-					}
+						
 					break;
+			
+					
 				case PT_DEUT:
 					if (sim->rng.chance(1, 1000))
-					{
+					
 						goto succ2;
-					}
-					break;
-				case PT_LAVA:
-					if (sim->rng.chance(1, 50))
-					{
-						sim->part_change_type(i,x,y,PT_FIRE);
-						parts[i].life = 4;
-					}
+
 					break;
 				
 				default:
@@ -94,13 +92,13 @@ static int update(UPDATE_FUNC_ARGS)
 			}
 		}
 	}
-	
-succ:
-	sim->create_part(i,x,y,PT_PLNT);
 	return 0;
-succ2:
-	sim->create_part(i,x,y,PT_BANG);
-	return 0;
+	succ:
+		sim->part_change_type(i,x,y,PT_PLNT);
+		return 0;
+	succ2:
+		sim->create_part(i,x,y,PT_BANG);
+		return 0;
 }
 
 static int graphics(GRAPHICS_FUNC_ARGS)
