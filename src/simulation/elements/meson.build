@@ -195,7 +195,7 @@ simulation_elem_names = [
 	'RSSS',
 	'COPR',
 	'ALUM',
-	'ALUP'
+	'BAUX'
 ]
 
 simulation_elem_src = []

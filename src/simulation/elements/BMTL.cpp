@@ -8,7 +8,7 @@ void Element::Element_BMTL()
 	Name = "BMTL";
 	Colour = 0x505070_rgb;
 	MenuVisible = 1;
-	MenuSection = SC_SOLIDS;
+	MenuSection = SC_METAL;
 	Enabled = 1;
 
 	Advection = 0.0f;

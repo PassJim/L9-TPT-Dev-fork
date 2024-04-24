@@ -8,7 +8,7 @@ void Element::Element_BREC()
 	Name = "BREL";
 	Colour = 0x707060_rgb;
 	MenuVisible = 1;
-	MenuSection = SC_POWDERS;
+	MenuSection = SC_METAL;
 	Enabled = 1;
 
 	Advection = 0.4f;

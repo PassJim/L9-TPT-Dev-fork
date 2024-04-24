@@ -8,7 +8,7 @@ void Element::Element_ALUM()
 	Name = "ALUM";
 	Colour = 0xCDD0CB_rgb;
 	MenuVisible = 1;
-	MenuSection = SC_SOLIDS;
+	MenuSection = SC_METAL;			// AlUM,COPR,BAUX,METL,BRMT,BMTL,SLCN,GOLD,TTAN,IRON,PTNM,BREC,TUNG - all moved to this category
 	Enabled = 1;
 
 	Advection = 0.0f;
@@ -64,7 +64,7 @@ static int update(UPDATE_FUNC_ARGS)
                         continue;
                     if (TYP(r)==PT_IRON && sim->rng.chance(1, 300))
                     {
-                        sim->create_part(i,x,y,PT_ALUP);
+                        sim->create_part(i,x,y,PT_BAUX);
         
                     }
                 }

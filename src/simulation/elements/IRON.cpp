@@ -8,7 +8,7 @@ void Element::Element_IRON()
 	Name = "IRON";
 	Colour = 0x707070_rgb;
 	MenuVisible = 1;
-	MenuSection = SC_SOLIDS;
+	MenuSection = SC_METAL;
 	Enabled = 1;
 
 	Advection = 0.0f;
@@ -60,6 +60,10 @@ static int update(UPDATE_FUNC_ARGS)
 				{
 				case PT_SALT:
 					if (sim->rng.chance(1, 47))
+						goto succ;
+					break;
+				case PT_BAUX:
+					if (sim->rng.chance(1, 1200))
 						goto succ;
 					break;
 				case PT_SLTW:

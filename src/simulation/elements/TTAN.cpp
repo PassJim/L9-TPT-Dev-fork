@@ -9,7 +9,7 @@ void Element::Element_TTAN()
 	Name = "TTAN";
 	Colour = 0x909090_rgb;
 	MenuVisible = 1;
-	MenuSection = SC_SOLIDS;
+	MenuSection = SC_METAL;
 	Enabled = 1;
 
 	Advection = 0.0f;

@@ -4,13 +4,13 @@ static int update(UPDATE_FUNC_ARGS);
 static int graphics(GRAPHICS_FUNC_ARGS);
 static void create(ELEMENT_CREATE_FUNC_ARGS);
 
-void Element::Element_ALUP()
+void Element::Element_BAUX()
 {
-	Identifier = "DEFAULT_PT_ALUP";
-	Name = "ALUP";
-	Colour = 0xA1A19E_rgb;
+	Identifier = "DEFAULT_PT_BAUX";
+	Name = "BAUX";
+	Colour = 0xffbc4d2f_rgb;
 	MenuVisible = 1;
-	MenuSection = SC_POWDERS;
+	MenuSection = SC_METAL;
 	Enabled = 1;
 
 	Advection = 0.4f;
@@ -18,7 +18,7 @@ void Element::Element_ALUP()
 	AirLoss = 0.94f;
 	Loss = 0.95f;
 	Collision = -0.1f;
-	Gravity = 0.3f;
+	Gravity = 0.2f;
 	Diffusion = 0.00f;
 	HotAir = 0.000f	* CFDS;
 	Falldown = 1;
@@ -28,10 +28,10 @@ void Element::Element_ALUP()
 	Meltable = 2;
 	Hardness = 2;
 
-	Weight = 90;
+	Weight = 20;
 
 	HeatConduct = 211;
-	Description = "Broken metal. Created when iron rusts or when metals break from pressure.";
+	Description = "Bauxite, Raw form of aluminium, formed if aluminium corrodes";
 
 	Properties = TYPE_PART|PROP_CONDUCTS|PROP_LIFE_DEC|PROP_HOT_GLOW;
 
@@ -82,7 +82,7 @@ static int update(UPDATE_FUNC_ARGS)
 }
 static int graphics(GRAPHICS_FUNC_ARGS)
 {
-	int z = (cpart->tmp2 - 2) * 8;
+	int z = (cpart->tmp2 - 2) * 16;
 	*colr += z;
 	*colg += z;
 	*colb += z;
