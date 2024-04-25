@@ -10,7 +10,7 @@ void Element::Element_PTNM()
 	Name = "PTNM";
 	Colour = 0xD5E0EB_rgb;
 	MenuVisible = 1;
-	MenuSection = SC_METAL;
+	MenuSection = SC_SOLIDS;
 	Enabled = 1;
 
 	Advection = 0.0f;

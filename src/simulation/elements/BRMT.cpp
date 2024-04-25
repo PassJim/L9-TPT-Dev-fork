@@ -8,7 +8,7 @@ void Element::Element_BRMT()
 	Name = "BRMT";
 	Colour = 0x705060_rgb;
 	MenuVisible = 1;
-	MenuSection = SC_METAL;
+	MenuSection = SC_POWDERS;
 	Enabled = 1;
 
 	Advection = 0.4f;

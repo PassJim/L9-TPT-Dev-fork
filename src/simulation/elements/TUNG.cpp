@@ -11,7 +11,7 @@ void Element::Element_TUNG()
 	Name = "TUNG";
 	Colour = 0x505050_rgb;
 	MenuVisible = 1;
-	MenuSection = SC_METAL;
+	MenuSection = SC_ELEC;
 	Enabled = 1;
 
 	Advection = 0.0f;

@@ -6,7 +6,7 @@ void Element::Element_METL()
 	Name = "METL";
 	Colour = 0x404060_rgb;
 	MenuVisible = 1;
-	MenuSection = SC_METAL;
+	MenuSection = SC_ELEC;
 	Enabled = 1;
 
 	Advection = 0.0f;

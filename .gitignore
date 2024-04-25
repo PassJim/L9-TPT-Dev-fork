@@ -32,6 +32,7 @@ config.log
 /Saves/
 /scripts/
 /recordings/
+/Processes/
 *.def
 *.pref
 *.lua

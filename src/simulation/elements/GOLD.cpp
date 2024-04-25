@@ -10,7 +10,7 @@ void Element::Element_GOLD()
 	Name = "GOLD";
 	Colour = 0xDCAD2C_rgb;
 	MenuVisible = 1;
-	MenuSection = SC_METAL;
+	MenuSection = SC_SOLIDS;
 	Enabled = 1;
 
 	Advection = 0.0f;

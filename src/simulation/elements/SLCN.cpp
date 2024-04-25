@@ -10,7 +10,7 @@ void Element::Element_SLCN()
 	Name = "SLCN";
 	Colour = 0xBCCDDF_rgb;
 	MenuVisible = 1;
-	MenuSection = SC_METAL;
+	MenuSection = SC_POWDERS;
 	Enabled = 1;
 
 	Advection = 0.4f;
