@@ -8,7 +8,7 @@ void Element::Element_HLOY()
 	Name = "HLOY";
 	Colour = 0xFF804633_rgb;
 	MenuVisible = 1;
-	MenuSection = SC_SOLIDS;
+	MenuSection = SC_MOD;
 	Enabled = 1;
 
 	Advection = 0.0f;
