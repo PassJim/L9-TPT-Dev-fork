@@ -8,7 +8,7 @@ void Element::Element_HNAN()
 	Name = "NANI";
 	Colour = 0x5F636D_rgb;
 	MenuVisible = 1;
-	MenuSection = SC_SOLIDS;
+	MenuSection = SC_MOD;
 	Enabled = 1;
 
 	Advection = 0.0f;

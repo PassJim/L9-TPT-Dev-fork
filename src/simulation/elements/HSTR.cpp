@@ -9,7 +9,7 @@ void Element::Element_HSTR()
 	Name = "HSTR";
 	Colour = 0x729493_rgb;
 	MenuVisible = 1;
-	MenuSection = SC_SOLIDS;
+	MenuSection = SC_MOD;
 	Enabled = 1;
 
 	Advection = 0.0f;

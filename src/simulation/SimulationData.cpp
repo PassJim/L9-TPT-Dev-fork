@@ -91,6 +91,7 @@ static std::vector<menu_section> LoadMenus()
 		{0xE04C, String("Special"), 0, 1},
 		{0xE052, String("Game Of Life"), 0, 1},
 		{0xE057, String("Tools"), 0, 1},
+		{0xE06F, String("Mod"), 0, 1},		//mod category
 		{0xE067, String("Favorites"), 0, 1},
 		{0xE064, String("Decoration tools"), 0, 1},
 		{0xE048, String("Cracker"), 0, 0},

@@ -9,7 +9,7 @@ void Element::Element_SBOMB()
 	Name = "SBOM";
 	Colour = 0x13D5F7_rgb;
 	MenuVisible = 1;
-	MenuSection = SC_EXPLOSIVE;
+	MenuSection = SC_MOD;
 	Enabled = 1;
 
 	Advection = 0.6f;

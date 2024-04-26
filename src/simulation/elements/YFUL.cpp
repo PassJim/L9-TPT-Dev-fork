@@ -10,7 +10,7 @@ void Element::Element_YFUL()
 	Name = "YFUL"; 
 	Colour = 0xFFAA7AD2_rgb;
 	MenuVisible = 1;
-	MenuSection = SC_EXPLOSIVE;
+	MenuSection = SC_MOD;
 	Enabled = 1;
 
 	Advection = 0.5f;

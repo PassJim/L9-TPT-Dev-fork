@@ -8,7 +8,7 @@ void Element::Element_ALUM()
 	Name = "ALUM";
 	Colour = 0xCDD0CB_rgb;
 	MenuVisible = 1;
-	MenuSection = SC_SOLIDS;
+	MenuSection = SC_MOD;
 	Enabled = 1;
 
 	Advection = 0.0f;

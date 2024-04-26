@@ -10,7 +10,7 @@ void Element::Element_ROYL()
 	Name = "ROYL";
 	Colour = 0xFF4173CC_rgb;
 	MenuVisible = 1;
-	MenuSection = SC_SOLIDS;
+	MenuSection = SC_MOD;
 	Enabled = 1;
 
 	Advection = 0.0f;

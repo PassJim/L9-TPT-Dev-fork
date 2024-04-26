@@ -8,7 +8,7 @@ void Element::Element_HREP()
 	Name = "HREP";
 	Colour = 0x708090_rgb;
 	MenuVisible = 1;
-	MenuSection = SC_LIQUID;
+	MenuSection = SC_MOD;
 	Enabled = 1;
 
 	Advection = 0.6f;

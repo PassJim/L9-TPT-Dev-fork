@@ -10,7 +10,7 @@ void Element::Element_HUMN()
 	Name = "HUMN";
 	Colour = 0xADCC7E_rgb;
 	MenuVisible = 1;
-	MenuSection = SC_SOLIDS;
+	MenuSection = SC_MOD;
 	Enabled = 1;
 
 	Advection = 0.0f;

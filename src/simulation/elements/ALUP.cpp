@@ -10,7 +10,7 @@ void Element::Element_ALUP()
 	Name = "ALUP";
 	Colour = 0xA1A19E_rgb;
 	MenuVisible = 1;
-	MenuSection = SC_POWDERS;
+	MenuSection = SC_MOD;
 	Enabled = 1;
 
 	Advection = 0.4f;
