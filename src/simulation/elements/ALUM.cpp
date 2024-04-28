@@ -64,7 +64,7 @@ static int update(UPDATE_FUNC_ARGS)
                         continue;
                     if (TYP(r)==PT_IRON && sim->rng.chance(1, 300))
                     {
-                        sim->create_part(i,x,y,PT_ALUP);
+                        sim->create_part(i,x,y,PT_BAUX);
         
                     }
                 }

@@ -66,7 +66,7 @@ static int update(UPDATE_FUNC_ARGS)
 					if (sim->rng.chance(1, 67))
 						goto succ;
 					break;
-				case PT_ALUP:
+				case PT_BAUX:
 					if (sim->rng.chance(1, 1200))
 						goto succ;
 					break;
